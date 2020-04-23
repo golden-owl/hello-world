@@ -17,3 +17,14 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 192.168.0.109
+    sourceFolder: '$(System.DefaultWorkingDirectory)'
+    contents: '**' 
+    targetFolder: C:\Users\ekaterina.tatanova\Documents\My Folder\Test-test
+    cleanTargetFolder: true
+    #overwrite: true # Optional
+    #failOnEmptySource: false # Optional
+    #flattenFolders: false # Optional
